@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<img src="{{ url_for('static', filename='img/' + post.image_file) }}">
+<p>"{{ post.title }}" &nbsp Author: {{ post.user.username }}</p>
+<p>{{ post.content }}</p>
+<!-- {% if post.comments %}
+{% if post.comments.count() > 0 %}
+    <h2>Comments</h2>
+    <p>
+    {% for comment in post.comments %}
+        <p>{{comment.author}}</p>
+        <p>{{ comment.body }}</p>
+    {% endfor %}
+    </p>
+{% endif %}
+{% endif %} -->
+{% endblock content %}

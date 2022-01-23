@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel=stylesheet type=text/css href="{{ url_for('static',
+filename='style.css') }}">
+<title>A Website by 1609290</title>
+</head>
+<body>
+<div id="page-container">
+    <div id="content-wrap">
+        <div id="header">
+            <nav id="top_navig_bar" class="navbar">
+                <ul>
+                    </li><a href="{{ url_for('home') }}" class="header">Home</a></li>
+                    </li><a href="{{ url_for('register') }}" class="header">Register</a></li>
+                    </li><a href="{{ url_for('login') }}" class="header">Login</a></li>
+                    </li><a href="{{ url_for('logout') }}" class="header">Logout</a></li>
+                    <li> {% if current_user.is_authenticated %}
+                            Hi {{ current_user.username }}
+                        {% endif %}
+                    </li>
+                </ul>
+                <!-- <p class="greeting">Hello, Guest!</p> -->
+            </nav>
+        </div>
+<br/>
+<br/>
+<div>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    </div>
+    <br/>
+        <div id="content">
+            {% block content %}
+            {% endblock %}
+            <br/>
+                <footer class="footer">
+                    Email: 1609290@example.com  <br/>  LinkedIn: 1609290
+                </footer>
+        </div>
+    </div>
+</div>
+</body>
+</html>

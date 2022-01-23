@@ -1,0 +1,52 @@
+body {
+    background-color: #f4f4f4;
+}
+
+img {
+    max-width: 60%;
+    height: auto;
+}
+
+.navbar {
+    background-color: rgb(231, 225, 225);
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+.navbar a {
+    float: left;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Set minimum height to 100% of viewport height */
+#page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+
+#content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+  }
+
+.footer {
+    /* position: fixed; */
+    left: 0;
+    width: 100%;
+    color: black;
+    text-align: center;
+    position: flex;
+    bottom: 0;
+    height: 2.5rem;
+}
+
+#content {
+    left: 50px;
+    right: 50px;
+    position: absolute;
+}
