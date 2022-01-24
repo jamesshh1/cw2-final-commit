@@ -17,7 +17,9 @@ filename='style.css') }}">
                     </li><a href="{{ url_for('login') }}" class="header">Login</a></li>
                     </li><a href="{{ url_for('logout') }}" class="header">Logout</a></li>
                     <li> {% if current_user.is_authenticated %}
-                            Hi {{ current_user.username }}
+                            Hello {{ current_user.username|capitalize }}!                            
+                            {% else %}
+                            Hello, guest!
                         {% endif %}
                     </li>
                 </ul>

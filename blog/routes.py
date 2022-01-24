@@ -13,10 +13,6 @@ def home():
     posts = Post.query.all()
     return render_template('home.html', posts=posts)
 
-@app.route("/about")
-def about():
-    return render_template('about.html', title='About Me')
-
 # Create route for post pages
 @app.route("/post/<int:post_id>")
 def post(post_id):
@@ -27,7 +23,7 @@ def post(post_id):
 @app.route("/register",methods=['GET','POST'])
 def register():
     form = RegistrationForm()
-    # Check the form is valid when submitted
+    # Check the form is valid when submitted and submit it to the database if so
     if form.validate_on_submit():
         user = User(username=form.username.data, email=form.email.data, password=form.password.data)
         db.session.add(user)
@@ -45,7 +41,7 @@ def login():
         user = User.query.filter_by(username=form.username.data).first()
         if user is not None and user.verify_password(form.password.data):
             login_user(user)
-            flash('Welcome!')
+            # flash('Welcome!')
             return redirect(url_for('home'))
         flash('Invalid username or password.')
     return render_template('login.html',title='Login',form=form)

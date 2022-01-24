@@ -2,7 +2,8 @@
 {% block content %}
 <form method="POST" action="">
   {{ form.csrf_token }}
-  <p>{{ form.username.label }} {{ form.username }}</p>
+  <!-- <p>{{ form.username.label }} {{ form.username }}</p> -->
+  <p>First name {{ form.username }}</p>
   <p>{{ form.password.label }} {{ form.password }}</p>
   <p><input type="submit" value="Login"></p>
 </form>

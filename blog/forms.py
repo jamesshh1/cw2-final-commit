@@ -7,8 +7,9 @@ from blog.models import User
 # Build a form which allows users to register and define the appropriate fields
 class RegistrationForm(FlaskForm):
   # Only allow user names which are 4 and 20 characters long and can only contain lowercase letters
-  username = StringField('Username',validators=[DataRequired(),Regexp('^[a-z]{4,20}$',message='Your username should be between 4 and 20 characters long, and can only contain lowercase letters.')])    
-  email = StringField('Email',validators=[DataRequired()])
+  username = StringField('First name',validators=[DataRequired(),Regexp('^[a-z]{4,20}$',message='Your username should be between 4 and 20 characters long, and can only contain lowercase letters.')])
+  # Only allow valid email address formats    
+  email = StringField('Email',validators=[DataRequired(), Regexp('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$', message='Please enter a valid email address.')])
   password = PasswordField('Password',validators=[DataRequired(), EqualTo('password2', message='Passwords must match')])
   password2 = PasswordField('Confirm password',validators=[DataRequired()])
   submit = SubmitField('Register')
