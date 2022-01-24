@@ -16,6 +16,7 @@ filename='style.css') }}">
                     </li><a href="{{ url_for('register') }}" class="header">Register</a></li>
                     </li><a href="{{ url_for('login') }}" class="header">Login</a></li>
                     </li><a href="{{ url_for('logout') }}" class="header">Logout</a></li>
+                    <!-- Greet registered users with their name and guests as 'guest' -->
                     <li> {% if current_user.is_authenticated %}
                             Hello {{ current_user.username|capitalize }}!                            
                             {% else %}
@@ -23,12 +24,12 @@ filename='style.css') }}">
                         {% endif %}
                     </li>
                 </ul>
-                <!-- <p class="greeting">Hello, Guest!</p> -->
             </nav>
         </div>
 <br/>
 <br/>
 <div>
+    <!-- Display flash messages -->
     {% with messages = get_flashed_messages() %}
       {% if messages %}
         <ul class=flashes>

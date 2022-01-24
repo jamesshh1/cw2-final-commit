@@ -3,6 +3,7 @@
 <img src="{{ url_for('static', filename='img/' + post.image_file) }}">
 <p>"{{ post.title }}" &nbsp Author: {{ post.user.username }}</p>
 <p>{{ post.content }}</p>
+<!-- This is the comment structure I tried to implement but could not get to work -->
 <!-- {% if post.comments %}
 {% if post.comments.count() > 0 %}
     <h2>Comments</h2>

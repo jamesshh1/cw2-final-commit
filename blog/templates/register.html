@@ -3,14 +3,22 @@
 <br/>
 <form method="POST" action="">
   {{ form.csrf_token }}
+  <!-- Allow guests to register by creating a username, entering thier email, creating a password
+  and then confirming the password -->
   <p>{{ form.username.label }} {{ form.username }}</p>
   <p>{{ form.email.label }} {{ form.email }}</p>
   <p>{{ form.password.label }} {{ form.password }}</p>
   <p>{{ form.password2.label }} {{ form.password2 }}</p>
   <input type="submit" value="Register">
 </form>
-
+<!-- Display error messages if user input is invalid in any of the fields -->
 {% for error in form.username.errors %}
+  <span style="color: red;">[{{ error }}]</span>
+{% endfor %}
+{% for error in form.email.errors %}
+  <span style="color: red;">[{{ error }}]</span>
+{% endfor %}
+{% for error in form.password.errors %}
   <span style="color: red;">[{{ error }}]</span>
 {% endfor %}
 

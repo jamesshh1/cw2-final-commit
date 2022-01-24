@@ -25,6 +25,7 @@ class LoginForm(FlaskForm):
   password = PasswordField('Password',validators=[DataRequired()])
   submit = SubmitField('Login')
 
+# Attempt to create comment functionality on the posts
 # class PostForm(FlaskForm):
 #     post = StringField('post', validators=[DataRequired()])
 #     title = StringField('title', validators=[DataRequired()])

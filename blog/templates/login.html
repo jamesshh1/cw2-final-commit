@@ -3,6 +3,7 @@
 <form method="POST" action="">
   {{ form.csrf_token }}
   <!-- <p>{{ form.username.label }} {{ form.username }}</p> -->
+  <!-- Allow users to log in using their username and password -->
   <p>First name {{ form.username }}</p>
   <p>{{ form.password.label }} {{ form.password }}</p>
   <p><input type="submit" value="Login"></p>

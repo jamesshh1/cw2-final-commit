@@ -47,7 +47,7 @@ class User(UserMixin,db.Model):
 def load_user(user_id):
   return User.query.get(int(user_id))
 
-
+# Attempt to create comment functionality on the posts
 # class Comment(db.Model):
 #     id = db.Column(db.Integer, primary_key=True)
 #     text = db.Column(db.String(140))

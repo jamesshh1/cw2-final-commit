@@ -63,6 +63,7 @@ def page_not_found(e):
 def page_not_found(e):
       return render_template('500.html'), 500
 
+# Attempt to create comment functionality on the posts
 # comment = Comment()
 # db.session.add(comment)
 # db.session.commit()
